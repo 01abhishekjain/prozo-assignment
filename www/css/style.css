@@ -1,0 +1,88 @@
+/* Empty. Add your own CSS if you like */
+
+.signUp-inputContainer {
+    line-height: 70px;
+}
+
+.signUp-input {
+    margin-left: 20px !important;
+    border-bottom: 1px solid lightgrey !important;
+    margin-right: 10px !important;
+}
+
+.signUp-signUpBtn {
+    font-size: larger;
+    width: 96%;
+    left: 8px;
+}
+
+.signUp-stateBtn {
+    width: 100%;
+    text-align: left;
+    color: #aaaaaa !important;
+}
+
+.signUp-popover {
+    top: 85px !important;
+    left: 50px !important;
+    margin-left: 0px;
+    opacity: 1;
+    height: 75%;
+    width: 85%;
+}
+
+.signUp-icon {
+    font-size: x-large;
+    width: 22px;
+}
+
+.popover-backdrop.active {
+    background: rgba(173, 173, 173, 0.67) !important;
+}
+
+.signUp-popoverItems {
+    display: block;
+    width: 100%;
+    text-align: left;
+    color: black !important;
+}
+
+.signUp-validationMsg {
+    margin-left: 53px;
+    margin-right: 10px;
+    margin-top: -18px;
+    color: brown;
+    display: block;
+}
+
+.signUpSuccess-msg-tick {
+    font-size: 40px;
+    float: left;
+    margin-top: 8px;
+    margin-right: 20px;
+    margin-left: 15px;
+}
+
+.signUpSuccess-msg-text {
+    color: grey;
+    font-size: large;
+    display: block;
+    margin-left: 70px;
+    line-height: 30px;
+}
+
+.signUpSuccess-msg-div {
+    margin-left: 29px;
+    margin-top: 30px;
+}
+
+.signUpSuccess-field-label {
+    margin-left: 30px;
+    margin-top: -2px;
+}
+
+.signUpSuccess-field-value {
+    margin-left: 71px;
+    color: grey;
+    margin-top: -22px !important;
+}

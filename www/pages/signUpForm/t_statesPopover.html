@@ -1,0 +1,9 @@
+<ion-popover-view class="signUp-popover">
+    <ion-content>
+        <ul class="list" style="padding-left: 20px;">
+            <button class="button button-clear signUp-popoverItems" ng-repeat="state in states" ng-click="setSelectedState(state.name, state.id)">
+                {{state.name}}
+            </button>
+        </ul>
+    </ion-content>
+</ion-popover-view>

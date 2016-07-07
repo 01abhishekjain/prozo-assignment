@@ -1,0 +1,77 @@
+<ion-view view-title="Sign Up Success">
+    <ion-nav-buttons>
+    </ion-nav-buttons>
+    <ion-content>
+        <section>
+            <div class="signUpSuccess-msg-div">
+                <span>
+                    <i class="icon ion-checkmark-circled balanced signUpSuccess-msg-tick"></i>
+                </span>
+                <span class="signUpSuccess-msg-text"> The user below has been registered successfully</span>
+            </div>
+        </section>
+        <section>
+            <div class="list" style="padding-top: 20px;">
+                <div>
+                    <label class="signUp-inputContainer item-input">
+                        <i class="signUp-icon icon ion-android-call placeholder-icon"></i>
+                        <div class="signUpSuccess-field-label">Mobile</div>
+                    </label>
+                    <div class="signUpSuccess-field-value">{{userData.phone}}</div>
+                </div>
+                <div>
+                    <label class="signUp-inputContainer item-input">
+                        <i class="signUp-icon icon ion-android-mail placeholder-icon"></i>
+                        <span class="signUpSuccess-field-label">Email</span>
+                    </label>
+                    <div class="signUpSuccess-field-value">{{userData.email}}</div>
+                </div>
+                <div>
+                    <label class="signUp-inputContainer item-input">
+                        <i class="signUp-icon icon ion-briefcase placeholder-icon"></i>
+                        <span class="signUpSuccess-field-label">Name of Business</span>
+                    </label>
+                    <div class="signUpSuccess-field-value">{{userData.business_name}}</div>
+                </div>
+                <div>
+                    <label class="signUp-inputContainer item-input">
+                        <i class="signUp-icon icon ion-android-map placeholder-icon"></i>
+                        <span class="signUpSuccess-field-label">Registered office address</span>
+                    </label>
+                    <div class="signUpSuccess-field-value">{{userData.address}}</div>
+                </div>
+                <div>
+                    <label class="signUp-inputContainer item-input">
+                        <i class="signUp-icon icon ion-location placeholder-icon"></i>
+                        <span class="signUpSuccess-field-label">City</span>
+                    </label>
+                    <div class="signUpSuccess-field-value">{{userData.city_id}}</div>
+                </div>
+                <div>
+                    <label class="signUp-inputContainer item-input">
+                        <!-- <i class="signUp-icon icon ion-android-home placeholder-icon"></i> -->
+                        <img class="signUp-icon" src="img/city.png" alt="">
+                        <span class="signUpSuccess-field-label">State</span>
+                    </label>
+                    <div class="signUpSuccess-field-value">{{userData.state_id}}</div>
+                </div>
+                <div>
+                    <label class="signUp-inputContainer item-input">
+                        <!-- <i class="signUp-icon icon ion-pin placeholder-icon"></i> -->
+                        <img class="signUp-icon" src="img/pinCode.png" alt="">
+                        <span class="signUpSuccess-field-label">PIN Code</span>
+                    </label>
+                    <div class="signUpSuccess-field-value">{{userData.pincode}}</div>
+                </div>
+                <div>
+                    <label class="signUp-inputContainer item-input">
+                        <!-- <i class="signUp-icon icon ion-card placeholder-icon"></i> -->
+                        <img class="signUp-icon" src="img/pan.png" alt="">
+                        <span class="signUpSuccess-field-label">PAN Number</span>
+                    </label>
+                    <div class="signUpSuccess-field-value">{{userData.pan}}</div>
+                </div>
+            </div>
+        </section>
+    </ion-content>
+</ion-view>
