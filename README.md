@@ -16,25 +16,28 @@ On successfull submission, the user is registered in the system and s/he can vie
 In order to run the project, you need to have the basic Ionic development environment set up:
 Assuming you have npm installed:
     <br>  
-    &nbsp;&nbsp;&nbsp;&nbsp;npm install -g ionic
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;npm install -g ionic
     <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;npm install -g cordova (if you wish to build for Android/iOS)
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;npm install -g cordova (if you wish to build for Android/iOS)
     <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;git pull https://github.com/01abhishekjain/prozo-assignment
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;git pull https://github.com/01abhishekjain/prozo-assignment
     <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;(cd into the folder)
-    &nbsp;&nbsp;&nbsp;&nbsp;ionic serve (if you wish to view in the browser**)
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(cd into the folder)
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ionic serve (if you wish to view in the browser**)
     
 In order to build for Android (assuming you have the Android SDK configured):
     <br>
-    ionic platform add android
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ionic platform add android
     <br>
-    ionic build Android
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ionic build Android
 
 NOTE: you can find detailed instructions here: http://ionicframework.com/docs/guide/installation.html
     
 ** in order for web services to run inside the browser, you need a way to work around the CORS restriction:
+  <br>
   option 1: Install an add-on and enable it: https://goo.gl/SpBzLM
+  <br>
   option 2: set up proxy on your Ionic project: http://blog.ionic.io/handling-cors-issues-in-ionic/
 
 
