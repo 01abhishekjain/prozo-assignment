@@ -14,23 +14,23 @@ On successfull submission, the user is registered in the system and s/he can vie
 <b>STEPS TO RUN</b>
 
 In order to run the project, you need to have the basic Ionic development environment set up:
-Assuming you have npm installed:
+Assuming you have npm and git installed:
     <br>  
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;npm install -g ionic
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>npm install -g ionic</b>
     <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;npm install -g cordova (if you wish to build for Android/iOS)
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>npm install -g cordova</b> (if you wish to build for Android/iOS)
     <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;git pull https://github.com/01abhishekjain/prozo-assignment
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>git pull https://github.com/01abhishekjain/prozo-assignment</b>
     <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(cd into the folder)
     <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ionic serve (if you wish to view in the browser**)
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ionic serve</b> (if you wish to view in the browser**)
     
 In order to build for Android (assuming you have the Android SDK configured):
     <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ionic platform add android
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ionic platform add android</b>
     <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ionic build Android
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ionic build Android</b>
 
 NOTE: you can find detailed instructions here: http://ionicframework.com/docs/guide/installation.html
     
