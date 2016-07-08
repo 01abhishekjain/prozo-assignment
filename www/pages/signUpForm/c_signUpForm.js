@@ -95,7 +95,6 @@ signUpForm.controller("c_signUpForm", function($scope, $ionicPopover, $http, $io
             params.city_id = data.city + "",
             params.pincode = data.pincode + "";
 
-        console.log('params ', params);
         var req = {
             method: "POST",
             url: API_SERVER + "users/register-user-demo",
@@ -116,7 +115,6 @@ signUpForm.controller("c_signUpForm", function($scope, $ionicPopover, $http, $io
                 } else {
                     alert(JSON.stringify(res));
                 }
-                console.log('res ', res);
             } else {
                 error(res);
             }
