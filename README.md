@@ -22,12 +22,13 @@ Assuming you have npm installed:
     <br>
     git pull https://github.com/01abhishekjain/prozo-assignment
     <br>
-    <cd into the folder>
-    <br>
+    (cd into the folder)
     ionic serve (if you wish to view in the browser*)
     
 In order to build for Android (assuming you have the Android SDK configured):
+    <br>
     ionic platform add android
+    <br>
     ionic build Android
 
 NOTE: you can find detailed instructions here: http://ionicframework.com/docs/guide/installation.html
