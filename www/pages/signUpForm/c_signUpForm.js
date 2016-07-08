@@ -1,12 +1,20 @@
-MAIN_APP.controller("c_signUpForm", function($scope, $ionicPopover, $http, $ionicLoading, $state) {
+signUpForm.controller("c_signUpForm", function($scope, $ionicPopover, $http, $ionicLoading, $state, s_citiesAndStates) {
 
     console.log("c_signUp called");
 
-    var c_signUpForm = this;
-    $scope.user = {};
+    // adds states to the factory and sets in the controller's scope
+    s_citiesAndStates.setStates($scope);
+    // starts an interval to check for states every 10 seconds
+    var statesInterval = setInterval(function() {
+        if (s_citiesAndStates.states.length < 1) {
+            s_citiesAndStates.setStates($scope);
+        } else {
+            clearInterval(statesInterval);
+        }
+    }, 5000);
 
-    $scope.states;
-    $scope.cities;
+    var c_signUpForm = this; // input form
+    $scope.user = {}; //holds the user inputs
 
     $scope.showStatePopover = function($event) {
         $scope.statesPopover = $ionicPopover.fromTemplateUrl('pages/signUpForm/t_statesPopover.html', {
@@ -16,9 +24,6 @@ MAIN_APP.controller("c_signUpForm", function($scope, $ionicPopover, $http, $ioni
             $scope.statesPopover.show($event);
         });
     }
-    $scope.$on('popover.hidden', function() {
-        $scope.statesPopover.remove();
-    });
 
     $scope.showCitiesPopover = function($event) {
         $scope.citiesPopover = $ionicPopover.fromTemplateUrl('pages/signUpForm/t_citiesPopover.html', {
@@ -28,9 +33,6 @@ MAIN_APP.controller("c_signUpForm", function($scope, $ionicPopover, $http, $ioni
             $scope.citiesPopover.show($event);
         });
     }
-    $scope.$on('popover.hidden', function() {
-        // $scope.citiesPopover.remove();
-    });
 
     $scope.setSelectedCity = function(cityName, cityId) {
         c_signUpForm.userProfile.city = cityName;
@@ -49,59 +51,17 @@ MAIN_APP.controller("c_signUpForm", function($scope, $ionicPopover, $http, $ioni
     }
 
     $scope.setCities = function(stateId) {
-        $ionicLoading.show();
+        s_citiesAndStates.setCities(stateId, $scope);
 
-        var req = {
-            method: "GET",
-            url: API_SERVER + "cities/" + stateId,
-            timeout: 10000
-        }
-
-        $http(req).then(success, error);
-
-        function success(res) {
-            $ionicLoading.hide();
-            if (res.statusText === "OK") {
-                $scope.cities = res.data;
+        // starts an interval to check for cities every 10 seconds
+        var citiesInterval = setInterval(function() {
+            if (s_citiesAndStates.cities.length < 1) {
+                s_citiesAndStates.setCities(stateId, $scope);
             } else {
-                error(res);
+                clearInterval(citiesInterval);
             }
-        }
-
-        function error(err) {
-            $ionicLoading.hide();
-            alert("Please check your network connection.");
-        }
+        }, 5000);
     }
-
-
-    $scope.setStates = function() {
-
-        var req = {
-            method: "GET",
-            url: API_SERVER + "states/1",
-            timeout: 10000
-        }
-
-        $http(req).then(success, error);
-
-        function success(res) {
-            if (res.statusText === "OK") {
-                if (typeof cordova !== 'undefined' && navigator.splashscreen) navigator.splashscreen.hide();
-                $scope.states = res.data;
-            } else {
-                error(res);
-            }
-            if (typeof cordova !== 'undefined' && navigator.splashscreen) navigator.splashscreen.hide();
-        }
-
-        function error(err) {
-            if (typeof cordova !== 'undefined' && navigator.splashscreen) navigator.splashscreen.hide();
-            alert("Please check your network connection.");
-            navigator.app.exitApp();
-        }
-    }
-    $scope.setStates();
 
     $scope.submit = function() {
         var f = c_signUpForm.userProfile;
@@ -149,8 +109,8 @@ MAIN_APP.controller("c_signUpForm", function($scope, $ionicPopover, $http, $ioni
             $ionicLoading.hide();
             if (res.statusText === "OK") {
                 if (res.data.status === "success") {
-                    $scope.userId = res.data.user_id;
-                    $scope.getUserDetails();
+                    // $scope.userId = res.data.user_id;
+                    $scope.getUserDetails(res.data.user_id);
                 } else if (res.data.status === "fail") {
                     alert(res.error);
                 } else {
@@ -169,12 +129,12 @@ MAIN_APP.controller("c_signUpForm", function($scope, $ionicPopover, $http, $ioni
 
     }
 
-    $scope.getUserDetails = function() {
+    $scope.getUserDetails = function(userId) {
         $ionicLoading.show();
 
         var req = {
             method: "GET",
-            url: API_SERVER + "users/get-user-demo?user_id=" + $scope.userId + "&apiKey=" + API_KEY,
+            url: API_SERVER + "users/get-user-demo?user_id=" + userId + "&apiKey=" + API_KEY,
             timeout: 10000
         }
 

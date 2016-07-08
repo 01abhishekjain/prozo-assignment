@@ -1,4 +1,4 @@
-<ion-view view-title="Sign Up Success">
+<ion-view view-title="Sign Up Success" hide-back-button="true">
     <ion-nav-buttons>
     </ion-nav-buttons>
     <ion-content>
@@ -11,7 +11,7 @@
             </div>
         </section>
         <section>
-            <div class="list" style="padding-top: 20px;">
+            <div class="list" style="padding-top: 20px; padding-bottom: 40px;">
                 <div>
                     <label class="signUp-inputContainer item-input">
                         <i class="signUp-icon icon ion-android-call placeholder-icon"></i>
@@ -45,7 +45,7 @@
                         <i class="signUp-icon icon ion-location placeholder-icon"></i>
                         <span class="signUpSuccess-field-label">City</span>
                     </label>
-                    <div class="signUpSuccess-field-value">{{userData.city_id}}</div>
+                    <div class="signUpSuccess-field-value">{{userData.city_name}}</div>
                 </div>
                 <div>
                     <label class="signUp-inputContainer item-input">
@@ -53,7 +53,7 @@
                         <img class="signUp-icon" src="img/city.png" alt="">
                         <span class="signUpSuccess-field-label">State</span>
                     </label>
-                    <div class="signUpSuccess-field-value">{{userData.state_id}}</div>
+                    <div class="signUpSuccess-field-value">{{userData.state_name}}</div>
                 </div>
                 <div>
                     <label class="signUp-inputContainer item-input">

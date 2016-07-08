@@ -1,11 +1,17 @@
-MAIN_APP.controller("c_signUpSuccess", function($scope, $state) {
-
-    console.log("c_signUpSuccess called");
+signUpSuccess.controller("c_signUpSuccess", function($scope, $state, s_citiesAndStates, $ionicHistory) {
 
     $scope.userData = JSON.parse($state.params.userData);
 
-    // var params = { "status": "success", "user_data": { "id": 26, "business_name": "sdv", "email": "svwsf@erwv", "phone": "2222222222", "pan": "NA", "address": "sv", "state_id": 18, "city_id": 309, "pincode": "323232" } }
+    var states = s_citiesAndStates.states;
+    for (var i = 0; i < states.length; i++) {
+        if (states[i].id == $scope.userData.state_id) $scope.userData.state_name = states[i].name;
+    }
+    var cities = s_citiesAndStates.cities;
+    for (var i = 0; i < cities.length; i++) {
+        if (cities[i].id == $scope.userData.city_id) $scope.userData.city_name = cities[i].name;
+    }
 
-    // $scope.userData = params.user_data;
+    $ionicHistory.clearHistory();
+    $ionicHistory.clearCache();
 
 });

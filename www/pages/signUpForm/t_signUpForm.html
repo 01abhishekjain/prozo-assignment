@@ -5,6 +5,8 @@
         <!-- <a ui-sref="signUpSuccess">GOOOOOO</a> -->
         <form id="userProfile" name="c_signUpForm.userProfile" ng-init="showValMsgs = false" novalidate>
             <div class="list" style="padding-top: 20px;">
+
+
                 <div>
                     <label class="signUp-inputContainer item-input">
                         <i class="signUp-icon icon ion-android-call placeholder-icon"></i>
@@ -12,6 +14,8 @@
                     </label>
                     <span class="signUp-validationMsg" ng-if="c_signUpForm.userProfile.mobile.$invalid && showValMsgs">Mobile Number must be 10 digits long</span>
                 </div>
+
+
                 <div>
                     <label class="signUp-inputContainer item-input">
                         <i class="signUp-icon icon ion-android-lock placeholder-icon"></i>
@@ -19,6 +23,8 @@
                     </label>
                     <span class="signUp-validationMsg" ng-if="c_signUpForm.userProfile.password.$invalid && showValMsgs">Password must contain at least 10 characters, a capital letter, a number and a special character out of ! @ # $ % ^ & only</span>
                 </div>
+
+
                 <div>
                     <label class="signUp-inputContainer item-input">
                         <i class="signUp-icon icon ion-android-mail placeholder-icon"></i>
@@ -26,6 +32,8 @@
                     </label>
                     <span class="signUp-validationMsg" ng-if="c_signUpForm.userProfile.email.$invalid && showValMsgs">Please enter a valid E-mail address</span>
                 </div>
+
+
                 <div>
                     <label class="signUp-inputContainer item-input">
                         <i class="signUp-icon icon ion-briefcase placeholder-icon"></i>
@@ -33,6 +41,8 @@
                     </label>
                     <span class="signUp-validationMsg" ng-if="c_signUpForm.userProfile.nob.$invalid && showValMsgs">Please fill this box</span>
                 </div>
+
+
                 <div>
                     <label class="signUp-inputContainer item-input">
                         <i class="signUp-icon icon ion-android-map placeholder-icon"></i>
@@ -40,6 +50,8 @@
                     </label>
                     <span class="signUp-validationMsg" ng-if="c_signUpForm.userProfile.roa.$invalid && showValMsgs">Please fill this box</span>
                 </div>
+
+
                 <div>
                     <label class="signUp-inputContainer item-input">
                         <i class="signUp-icon icon ion-location placeholder-icon"></i>
@@ -50,17 +62,21 @@
                     </label>
                     <span class="signUp-validationMsg" ng-if="!c_signUpForm.userProfile.state && showValMsgs">Please select a state</span>
                 </div>
+
+
                 <div>
                     <label class="signUp-inputContainer item-input" style="height: 81px;">
                         <!-- <i class="signUp-icon icon ion-android-home placeholder-icon"></i> -->
                         <img class="signUp-icon" src="img/city.png" alt="">
-                        <button ng-click="showCitiesPopover($event)" class="button button-clear button-positive signUp-input signUp-stateBtn icon-right ion-android-arrow-dropdown" ng-disabled="!c_signUpForm.userProfile.state">
+                        <button ng-click="showCitiesPopover($event)" class="button button-clear button-positive signUp-input signUp-stateBtn icon-right ion-android-arrow-dropdown" ng-disabled="!c_signUpForm.userProfile.state || !cities">
                             <span ng-show="!c_signUpForm.userProfile.city">City*</span>
                             <span ng-show="c_signUpForm.userProfile.city" style="color:black;">{{c_signUpForm.userProfile.city}}</span>
                         </button>
                     </label>
                     <span class="signUp-validationMsg" ng-if="!c_signUpForm.userProfile.city && showValMsgs">Please select a city</span>
                 </div>
+
+
                 <div>
                     <label class="signUp-inputContainer item-input" style="height: 81px;">
                         <!-- <i class="signUp-icon icon ion-pin placeholder-icon"></i> -->
@@ -69,6 +85,8 @@
                     </label>
                     <span class="signUp-validationMsg" ng-if="c_signUpForm.userProfile.pincode.$invalid && showValMsgs">Please fill this box</span>
                 </div>
+
+
                 <div>
                     <label class="signUp-inputContainer item-input" style="height: 81px;">
                         <!-- <i class="signUp-icon icon ion-card placeholder-icon"></i> -->
@@ -77,9 +95,11 @@
                     </label>
                     <span class="signUp-validationMsg" ng-if="c_signUpForm.userProfile.pan.$invalid && showValMsgs">Please enter a PAN number of the format ABCDE1234F</span>
                 </div>
+
+                
             </div>
             <button class="button button-balanced signUp-signUpBtn" ng-click="showValMsgs=true; submit()">
-                SUBMIT {{c_signUpForm.userProfile.$valid}}
+                SUBMIT
             </button>
         </form>
     </ion-content>
